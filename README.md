@@ -72,7 +72,7 @@ class Post
 
   timestamps
 end
-```ruby
+```
 Create a default Cassandra configuration file
 
 $ rails g cequel:configuration
