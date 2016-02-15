@@ -13,7 +13,7 @@ $ gzip -dc apache-cassandra-2.2.0-bin.tar.gz | tar xf -
 
 Update .profile with the following lines:
 
-# set environment variables for Cassandra.
+set environment variables for Cassandra.
 export CASSANDRA_VERSION=2.2.0
 export CASSANDRA_HOME=${HOME}/apache-cassandra-${CASSANDRA_VERSION}
 export PATH=${CASSANDRA_HOME}/bin:${PATH}
@@ -47,7 +47,7 @@ rails new blog
 
 go to rails app directory and open Gemfile
 add
-# Use  cassandra as the database for Active Record
+
 gem 'cequel'
 
 bundle install
@@ -62,7 +62,7 @@ Add the following as the first route within config/routes.rb file:
 root 'posts#index'  #Chnage it latter
 
 Create app/models/post.rb file with the following content:
-
+```ruby
 class Post
   include Cequel::Record
 
@@ -72,7 +72,7 @@ class Post
 
   timestamps
 end
-
+```ruby
 Create a default Cassandra configuration file
 
 $ rails g cequel:configuration
